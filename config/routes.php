@@ -57,6 +57,17 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->applyMiddleware('csrf');
 
+    // タグ付けられたアクションのために追加された新しいルート。
+    // 末尾の `*` は、このアクションがパラメーターを渡されることを
+    // CakePHP に伝えます。
+    Router::scope(
+        '/articles',
+        ['controller' => 'Articles'],
+        function ($routes) {
+            $routes->connect('/tagged/*', ['action' => 'tags']);
+        }
+    );
+
     /*
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
