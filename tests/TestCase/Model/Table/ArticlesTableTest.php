@@ -15,7 +15,7 @@ class ArticlesTableTest extends TestCase
      *
      * @var \App\Model\Table\ArticlesTable
      */
-    public $Articles;
+    public $ArticlesTable;
 
     /**
      * Fixtures
@@ -37,7 +37,7 @@ class ArticlesTableTest extends TestCase
     {
         parent::setUp();
         $config = TableRegistry::getTableLocator()->exists('Articles') ? [] : ['className' => ArticlesTable::class];
-        $this->Articles = TableRegistry::getTableLocator()->get('Articles', $config);
+        $this->ArticlesTable = TableRegistry::getTableLocator()->get('Articles', $config);
     }
 
     /**
@@ -47,7 +47,7 @@ class ArticlesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Articles);
+        unset($this->ArticlesTable);
 
         parent::tearDown();
     }
@@ -58,6 +58,16 @@ class ArticlesTableTest extends TestCase
      * @return void
      */
     public function testInitialize()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test beforeSave method
+     *
+     * @return void
+     */
+    public function testBeforeSave()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
@@ -78,6 +88,16 @@ class ArticlesTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test findTagged method
+     *
+     * @return void
+     */
+    public function testFindTagged()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
